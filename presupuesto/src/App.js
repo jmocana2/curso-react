@@ -1,4 +1,4 @@
-import Pregunta from "./components/pregunta";
+import Pregunta from "./components/Pregunta";
 
 function App() {
   return (
