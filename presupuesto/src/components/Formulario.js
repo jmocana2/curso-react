@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
+
 import Error from './Error';
 
 const Formulario = ({guardarGasto, guardarCrearGasto}) => {
@@ -17,7 +19,15 @@ const Formulario = ({guardarGasto, guardarCrearGasto}) => {
       return;
     }
     guardarError(false);
+
     // construir el gasto
+    const gasto = {
+      nombregasto,
+      cantidad,
+      id: shortid.generate()
+    }
+
+    console.log(gasto);
 
     // pasar el gasto al componente principal
 
