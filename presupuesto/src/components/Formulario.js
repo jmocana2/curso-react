@@ -28,7 +28,6 @@ const Formulario = ({guardarGasto, guardarCrearGasto}) => {
     }
 
     // pasar el gasto al componente principal
-    console.log(gasto);
     guardarGasto(gasto);
     guardarCrearGasto(true);
 
