@@ -1,5 +1,6 @@
 import React, { Fragment} from 'react';
 import PropTypes from 'prop-types';
+import { controlPresupuesto } from '../helpers';
 
 const ControlPresupuesto = ({presupuesto, restante}) => {
     return ( 
@@ -7,7 +8,7 @@ const ControlPresupuesto = ({presupuesto, restante}) => {
             <div className="alert alert-primary">
                 Presupuesto: $ {presupuesto}
             </div>
-            <div>
+            <div className={controlPresupuesto(presupuesto, restante)}>
                 Restante: $ {restante}
             </div>
         </Fragment>
