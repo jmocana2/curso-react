@@ -6,13 +6,17 @@ const Formulario = ({guardarGasto, guardarCrearGasto}) => {
  
   const [nombregasto, agregarNombreGasto] = useState('');
   const [cantidad, guardarCantidad] = useState(0);
+  const [error, guardarError] = useState(false);
 
   // agregar nuevo gasto
   const agregarGasto = e => {
     e.preventDefault();
-
     // validar
-
+    if(cantidad < 1 || isNaN(cantidad) || nombregasto.trim() === ''){
+      guardarError(true);
+      return;
+    }
+    guardarError(false);
     // construir el gasto
 
     // pasar el gasto al componente principal
@@ -25,7 +29,7 @@ const Formulario = ({guardarGasto, guardarCrearGasto}) => {
       onSubmit={agregarGasto}
     >
         <h2>Agrega tus gastos aquí</h2>
-
+        {error ? <Error mensaje="Se produjo un error al agregar el nuevo gasto" /> : null }
         <div className="campo">
           <label>Nombre Gasto</label>
           <input 
