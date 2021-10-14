@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
+import { obtenerDiferenciaYears } from '../helpers';
+
 const Campo = styled.div`
     display: flex;
     margin-bottom: 1rem;
@@ -79,6 +81,14 @@ const Formulario = () => {
 
       guardarError(false);
     }
+
+    // Restamos por años cotizados
+    let resultado = 2000;
+    
+    // Por cada año hay que restar el 3%
+    resultado -= ((3 * obtenerDiferenciaYears(year)) * resultado) / 100;
+
+    console.log(resultado);
     
     return ( 
       <form
