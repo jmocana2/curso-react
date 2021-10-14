@@ -1,8 +1,9 @@
 import React from 'react';
+import { StyledHeader } from './style';
 
 const Header = ({titulo}) => {
   return ( 
-    <header><h1>{titulo}</h1></header>
+    <StyledHeader><h1>{titulo}</h1></StyledHeader>
   );
 }
  
