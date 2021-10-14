@@ -1,4 +1,4 @@
-export const obtenerDiferenciaYears = (year) => {
+export const obtenerDiferenciaYear = (year) => {
   return new Date().getFullYear() - year;
 }
 
@@ -21,6 +21,6 @@ export const calcularMarca = (marca) => {
   return incremento;
 }
 
-export const incremetoPlan = (plan) => {
+export const obtenerPlan = (plan) => {
   return (plan === 'completo') ? 1.50 : 1.20;
 }
