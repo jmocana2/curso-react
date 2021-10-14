@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
@@ -49,6 +49,24 @@ const Error = styled.div`
 `;
 
 const Formulario = () => {
+
+    // Definimos el estado
+    const [datos, guardarDatos] = useState({
+      marca: '',
+      year: '',
+      plan: ''
+    });
+
+    // Extraer los valores del state
+    const { marca, year, plan } = datos;
+
+    // Obtener información del formulario
+    const obtenerInformacion = (e) => {
+      guardarDatos({
+        ...datos,
+        [e.target.name] : e.target.value
+      })
+    }
     
     return ( 
         <form
@@ -60,7 +78,8 @@ const Formulario = () => {
                 <Label>Marca</Label>
                 <Select
                     name="marca"
-                   
+                    value={marca}
+                    onChange={obtenerInformacion}
                 >
                     <option value="">-- Seleccione --</option>
                     <option value="americano">Americano</option>
@@ -73,7 +92,8 @@ const Formulario = () => {
                 <Label>Año</Label>
                 <Select
                     name="year"
-                 
+                    value={year}
+                    onChange={obtenerInformacion}
                 >
                     <option value="">-- Seleccione --</option>
                     <option value="2021">2021</option>
@@ -95,14 +115,16 @@ const Formulario = () => {
                     type="radio"
                     name="plan"
                     value="basico"
-              
+                    checked={plan === 'basico'}
+                    onChange={obtenerInformacion}
                 /> Básico
 
                 <InputRadio 
                     type="radio"
                     name="plan"
                     value="completo"
-                   
+                    checked={plan === 'completo'}
+                    onChange={obtenerInformacion}
                 /> Completo
             </Campo>
 
