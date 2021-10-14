@@ -20,3 +20,7 @@ export const calcularMarca = (marca) => {
 
   return incremento;
 }
+
+export const incremetoPlan = (plan) => {
+  return (plan === 'completo') ? 1.50 : 1.20;
+}

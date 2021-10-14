@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { obtenerDiferenciaYears, calcularMarca } from '../helpers';
+import { obtenerDiferenciaYears, calcularMarca, incremetoPlan } from '../helpers';
 
 const Campo = styled.div`
     display: flex;
@@ -94,6 +94,12 @@ const Formulario = () => {
     // Europeo 30%
 
     resultado = resultado * calcularMarca(marca);
+
+    // Incremento por plan
+    // Básico aumenta 20%
+    // Completo aumenta 50%
+    resultado = resultado * parseFloat(incremetoPlan(plan)).toFixed(2);
+    
 
     console.log(resultado);
     
