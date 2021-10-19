@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Frase from './components/Frase';
 
@@ -37,11 +37,13 @@ function App() {
     guardarFrase(frase[0]);
   }
   
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
   return (
     <Contenedor>
-      {frase.quote &&
       <Frase frase={frase} />
-      }
       <Boton onClick={consultarAPI}>
         Obtener Frase
       </Boton>
