@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-
-const Formulario = () => {
+const Formulario = ({ busqueda, guardarBusqueda, guardarConsultar }) => {
 
   // definimos state
-  const [busqueda, guardarBusqueda] = useState({
-    ciudad: '',
-    pais: ''
-  });
+  
   const [error, guardarError] = useState(false)
 
   const { ciudad, pais } = busqueda;
@@ -35,6 +31,7 @@ const Formulario = () => {
     guardarError(false);
 
     // enviar al componente principal
+    guardarConsultar(true);
   }
     
   return ( 
