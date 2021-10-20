@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import PropTypes from 'prop-types';
 
 
 const Formulario = () => {
+
+  // definimos state
+  const [busqueda, guardarBusqueda] = useState({
+    ciudad: '',
+    pais: ''
+  });
+
+  const { ciudad, pais } = busqueda;
+
+  //guardamos la busqueda
+  const handleChange = (e) => {
+    guardarBusqueda({
+      ...busqueda,
+      [e.target.name] : e.target.value
+    });
+  }
     
   return ( 
     <form
@@ -14,7 +30,8 @@ const Formulario = () => {
               type="text"
               name="ciudad"
               id="ciudad"
-    
+              value={ciudad}
+              onChange={handleChange}
           />
           <label htmlFor="ciudad">Ciudad: </label>
       </div>
@@ -23,7 +40,8 @@ const Formulario = () => {
           <select
               name="pais"
               id="pais"
-              
+              value={pais}
+              onChange={handleChange}
           >
               <option value="">-- Seleccione un país --</option>
               <option value="US">Estados Unidos</option>
