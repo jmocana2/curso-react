@@ -32,7 +32,7 @@ const useMoneda = (label, stateInicial, opciones) => {
         <Fragment>
             <Label>{label}</Label>
             <Select
-           
+              onChange={(e) => actualizarState(e.target.value)}
             >
               <option >- Seleccione -</option>
               {opciones.length && opciones.map(opcion => 
