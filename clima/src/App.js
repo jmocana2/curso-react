@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
+import Clima from './components/Clima';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
   
           guardarResultado(resultado);
           guardarConsultar(false);
+
+          console.log('El resultado es: ', resultado);
         }
         
     }
@@ -50,7 +53,7 @@ function App() {
                         />
                     </div>
                     <div className="col m6 s12">
-                    
+                      <Clima resultado={resultado} />
                     </div>
                 </div>
             </div>
