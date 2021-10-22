@@ -1,4 +1,5 @@
 import React from 'react';
+import Formulario from './components/Formulario';
 import Header from './components/Header';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
         />
 
         <div className="container white">
-        
+          <Formulario />
         </div>
     </>
   );
