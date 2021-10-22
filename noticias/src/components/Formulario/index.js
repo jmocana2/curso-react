@@ -3,7 +3,7 @@ import styles from './Formulario.module.css';
 import PropTypes from 'prop-types';
 import useSelect from '../../hooks/useSelect';
 
-const Formulario = ({guardarCategoria}) => {
+const Formulario = () => {
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
@@ -15,7 +15,9 @@ const Formulario = ({guardarCategoria}) => {
         { value: 'technology', label: 'Tecnología'},
     ]
 
-    const [categorias, NewsSelect] = useSelect()
+    const [categoria, NewsSelect] = useSelect('general', OPCIONES);
+
+    console.log('categoria: ', categoria);
 
      return ( 
         <div className={`${styles.buscador} row`}>

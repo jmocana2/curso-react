@@ -2,15 +2,23 @@ import React, { useState } from 'react';
 
 const useSelect = (estadoInicial, opciones) => {
   //state
-  const [categorias, guardarCategorias] = useState('');
+  const [categoria, guardarCategoria] = useState(estadoInicial);
 
-  const newsSelect = () => (
-    <select className="browser-default">
-      <option value="#">Seleccionar</option>
+  const NewsSelect = () => (   
+
+    <select 
+      className="browser-default"
+      value={categoria}
+      onChange={(e) => guardarCategoria(e.target.value)}
+    >
+      {opciones && opciones.map((opcion) => {
+        return <option key={opcion.value} value={opcion.value}>{opcion.label}</option>
+      })}
+      
     </select>
   )
 
-  return [categorias, newsSelect]
+  return [categoria, NewsSelect]
 
 }
 
