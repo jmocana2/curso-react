@@ -31,6 +31,7 @@ const useMoneda = (label, stateInicial, opciones) => {
             <Label>{label}</Label>
             <Select
               onChange={(e) => actualizarState(e.target.value)}
+              value={state}
             >
               <option >- Seleccione -</option>
               {opciones.length && opciones.map(opcion => 
