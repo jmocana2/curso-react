@@ -1,8 +1,17 @@
 import React from 'react';
+import Header from './components/Header';
 
 function App() {
   return (
-    <h1>Proyecto buscador de noticias</h1>
+    <>
+        <Header 
+          titulo='Buscador de Noticias'
+        />
+
+        <div className="container white">
+        
+        </div>
+    </>
   );
 }
 
