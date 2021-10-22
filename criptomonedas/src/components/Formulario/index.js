@@ -68,6 +68,7 @@ const Formulario = ({guardarMoneda,  guardarCriptomoneda }) => {
 
         // pasar los datos al componente principal
         guardarError(false);
+        console.log('moneda', moneda);
         guardarMoneda(moneda);
         guardarCriptomoneda(criptomoneda);
     }

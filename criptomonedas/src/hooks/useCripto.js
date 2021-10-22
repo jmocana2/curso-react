@@ -35,7 +35,7 @@ const useCripto = (label, stateInicial, opciones) => {
             >
               <option >- Seleccione -</option>
               {opciones && opciones.length && opciones.map(opcion => 
-                <option key={opcion.CoinInfo.Id} value={opcion.CoinInfo.Id}>{opcion.CoinInfo.FullName}</option>
+                <option key={opcion.CoinInfo.Id} value={opcion.CoinInfo.Name}>{opcion.CoinInfo.FullName}</option>
               )}           
             </Select>
         </Fragment>
