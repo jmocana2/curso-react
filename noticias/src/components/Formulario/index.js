@@ -3,7 +3,7 @@ import styles from './Formulario.module.css';
 import PropTypes from 'prop-types';
 import useSelect from '../../hooks/useSelect';
 
-const Formulario = () => {
+const Formulario = ({guardarCategoria}) => {
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
@@ -17,13 +17,17 @@ const Formulario = () => {
 
     const [categoria, NewsSelect] = useSelect('general', OPCIONES);
 
-    console.log('categoria: ', categoria);
+    const buscarCategoria = (e) =>{
+      e.preventDefault();
+
+      guardarCategoria(categoria);
+    }
 
      return ( 
         <div className={`${styles.buscador} row`}>
             <div className="col s12 m8 offset-m2">
                 <form
-                   
+                   onSubmit={buscarCategoria}
                 >
                     <h2 className={styles.heading}>Encuentra Noticias por Categoría</h2>     
 

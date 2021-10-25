@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
 import Header from './components/Header';
 
 function App() {
+
+  const [categoria, guardarCategoria] = useState('');
+
+  useEffect(()=>{
+    console.log('categoría: ', categoria);
+  }, [categoria]);
+
   return (
     <>
         <Header 
@@ -10,7 +17,7 @@ function App() {
         />
 
         <div className="container white">
-          <Formulario />
+          <Formulario guardarCategoria={guardarCategoria} />
         </div>
     </>
   );
