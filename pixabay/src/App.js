@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Formulario from './components/Formulario';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="jumbotron">
+          <p className="lead text-center">Buscador de Imágenes</p>
+
+          <Formulario 
+      
+          />
+      </div>
+
+      <div className="row justify-content-center">
+       
+        <p>Aquí el componente Listado de imágenes</p>
+      
+            <button 
+                type="button"
+                className="bbtn btn-info mr-1"
+          
+            >&laquo; Anterior </button>
+     
+            <button 
+              type="button"
+              className="bbtn btn-info"
+        
+            >Siguiente &raquo;</button>
+   
+      </div>
     </div>
   );
 }
