@@ -7,7 +7,17 @@ function App() {
   const [categoria, guardarCategoria] = useState('');
 
   useEffect(()=>{
-    console.log('categoría: ', categoria);
+
+    const consultarAPI = async() => {
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${categoria}&apiKey=4305bf24ee154ac09a491f24a5d249a8`
+    
+      const consulta = await fetch(url);
+      const resultado = await consulta.json();
+        
+      console.log(resultado.articles);
+    }
+    consultarAPI();
+
   }, [categoria]);
 
   return (
