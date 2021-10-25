@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
 import Header from './components/Header';
+import ListadoNoticias from './components/ListadoNoticia';
 
 function App() {
 
   const [categoria, guardarCategoria] = useState('');
+  const [noticias, guardarNoticias] = useState('');
 
   useEffect(()=>{
 
@@ -14,7 +16,7 @@ function App() {
       const consulta = await fetch(url);
       const resultado = await consulta.json();
         
-      console.log(resultado.articles);
+      guardarNoticias(resultado.articles);
     }
     consultarAPI();
 
@@ -28,6 +30,7 @@ function App() {
 
         <div className="container white">
           <Formulario guardarCategoria={guardarCategoria} />
+          <ListadoNoticias noticias={noticias} />
         </div>
     </>
   );
