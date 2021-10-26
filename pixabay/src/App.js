@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
+import ListadoImagenes from './components/ListadoImagenes';
 
 function App() {
 
   //definimos state
   const [busqueda, guardarBusqueda] = useState('');
+  const [imagenes, guardarImagenes] = useState([]);
 
   useEffect(() => {
 
@@ -17,6 +19,7 @@ function App() {
       const resultado = await consulta.json();
 
       console.log(resultado);
+      guardarImagenes(resultado.hits);
     }
     consultarAPI();
   }, [busqueda])
@@ -33,7 +36,9 @@ function App() {
 
       <div className="row justify-content-center">
        
-        <p>Aquí el componente Listado de imágenes</p>
+          <ListadoImagenes 
+            imagenes={imagenes}
+          />
       
             <button 
                 type="button"
