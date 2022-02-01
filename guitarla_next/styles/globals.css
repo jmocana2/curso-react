@@ -32,3 +32,8 @@ img {
   color: var(--primary);
   margin: 5rem 0;
 }
+
+.nosotros-image{
+  max-width: 500px;
+  margin: 0 auto;
+}
