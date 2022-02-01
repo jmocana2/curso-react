@@ -9,7 +9,7 @@ const Header = () => {
         <Link href="/">
           <Image src="/img/logo.svg" width={400} height={100} alt="Logotipo de Guitarla" />
         </Link>
-        <nav className={styles.headerLink}>
+        <nav className={styles.navegacion}>
           <Link  href="/">Inicio</Link>
           <Link href="/nosotros">Nosotros</Link>
           <Link href="/blog">Blog</Link>

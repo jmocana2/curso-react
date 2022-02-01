@@ -5,12 +5,12 @@
   padding: 5rem 0;
 }
 
-.headerLink{
+.navegacion{
   margin-left: 18px;
   margin-top: 20px;
 }
 
-.headerLink a{
+.navegacion a{
   color: var(--blanco);
   text-decoration: none;
   margin-left: 20px;
