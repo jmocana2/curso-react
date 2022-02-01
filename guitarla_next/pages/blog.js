@@ -2,8 +2,8 @@ import Layout from '../components/layout'
 
 export default function Home() {
   return (
-    <Layout pagina="Inicio">      
-      Desde Inicio
+    <Layout pagina="Blog">      
+      Desde blog
     </Layout>
   )
 }
