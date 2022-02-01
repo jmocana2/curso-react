@@ -4,3 +4,14 @@
   background-position: 50%;
   padding: 5rem 0;
 }
+
+.headerLink{
+  margin-left: 18px;
+  margin-top: 20px;
+}
+
+.headerLink a{
+  color: var(--blanco);
+  text-decoration: none;
+  margin-left: 20px;
+}
